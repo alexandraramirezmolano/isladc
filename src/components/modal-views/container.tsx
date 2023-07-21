@@ -26,7 +26,7 @@ function renderModalContent(view: MODAL_VIEW | string) {
     case 'SEARCH_VIEW':
       return <SearchView />;
     case 'SHARE_VIEW':
-      return <ShareView />;
+      return <ShareView nftUrl={''} />;
     case 'WALLET_CONNECT_VIEW':
       return <SelectWallet />;
     case 'PROFILE_INFO_VIEW':

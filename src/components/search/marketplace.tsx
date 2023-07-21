@@ -19,7 +19,7 @@ export const Marketplace = () => {
       try {
         const sdk = new ThirdwebSDK(Mumbai);
         const contract = await sdk.getContract(
-          process.env.NEXT_PUBLIC_MARKETPLACE_ADDRESS
+          '0xADe8C8680e0d795c2AAe510D5077d638228F6476'
         );
         const fetchedListings = await contract.directListings.getAll();
 

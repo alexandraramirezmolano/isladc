@@ -22,7 +22,7 @@ export const TransferNft = () => {
   const [rerenderTrigger, setRerenderTrigger] = useState(false);
 
   const { contract: marketplace, isLoading: loadingContract } = useContract(
-    process.env.NEXT_PUBLIC_MARKETPLACE_ADDRESS,
+    '0xADe8C8680e0d795c2AAe510D5077d638228F6476',
     'marketplace-v3'
   );
 
@@ -94,7 +94,7 @@ export const TransferNft = () => {
     <>
       <div id="alert-container"></div>
       <Web3Button
-        contractAddress={process.env.NEXT_PUBLIC_MARKETPLACE_ADDRESS || ''}
+        contractAddress={'0xADe8C8680e0d795c2AAe510D5077d638228F6476' || ''}
         action={async () => await buyListing()}
         onSuccess={() => {
           handleOnSuccess();

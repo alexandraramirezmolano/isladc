@@ -15,7 +15,7 @@ export const SDKProvider: React.FC<{ children: ReactNode }> = ({
   const [list, setList] = useState<any>([]); // Use the 'any' type for the list
 
   const initializeSDK = async (): Promise<void> => {
-    const privateKey = process.env.NEXT_PUBLIC_PRIVATE_KEY;
+    const privateKey = '0xADe8C8680e0d795c2AAe510D5077d638228F6476';
     const sdk = ThirdwebSDK.fromPrivateKey(
       'df96eec926afcb5efd766af42d6732e897f4068bd85835ddcb1fcadd422837ae',
       Mumbai

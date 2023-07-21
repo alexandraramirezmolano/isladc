@@ -1,0 +1,4 @@
+option_settings:
+  aws:elasticbeanstalk:container:nodejs:
+    NodeCommand: "npx next start"
+    NodeVersion: "18.0.0"

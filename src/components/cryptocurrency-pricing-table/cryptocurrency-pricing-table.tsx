@@ -42,6 +42,7 @@ const COLUMNS = [
             'https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2F%24&psig=AOvVaw1ho4taO7lkx6wpNAGPSvKi&ust=1685488600974000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCMiqqLzUm_8CFQAAAAAdAAAAABAE'
           }
           style={{ width: '25px', height: '25px', objectFit: 'contain' }}
+          alt={value}
         ></img>
       </div>
     ),

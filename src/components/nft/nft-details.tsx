@@ -50,7 +50,7 @@ export default function NftDetails() {
     try {
       const sdk = new ThirdwebSDK(Mumbai);
       const contract = await sdk.getContract(
-        process.env.NEXT_PUBLIC_MARKETPLACE_ADDRESS
+        '0xADe8C8680e0d795c2AAe510D5077d638228F6476'
       );
       const listing = await contract.directListings.getListing(
         singleListing?.id || 0
@@ -91,17 +91,16 @@ export default function NftDetails() {
           <div className="flex h-full max-h-full w-full items-center justify-center lg:max-w-[768px]">
             <div className="relative aspect-square max-h-full overflow-hidden rounded-lg">
               <img
-                src={singleListing?.asset.image}
-                alt={singleListing?.asset.name}
+                src={singleListing?.asset.image || ''}
+                alt={'hi'}
                 width={768}
-                priority
                 className="h-full bg-gray-200 dark:bg-light-dark"
               />
             </div>
           </div>
         </div>
 
-        <div className="relative flex pt-10 w-full h-full flex-col justify-between ltr:md:ml-auto ltr:md:pl-8 rtl:md:mr-auto rtl:md:pr-8 lg:min-h-[calc(100vh-96px)] lg:w-[460px] ltr:lg:pl-12 rtl:lg:pr-12 xl:w-[592px] ltr:xl:pl-20 rtl:xl:pr-20">
+        <div className="relative flex h-full w-full flex-col justify-between pt-10 ltr:md:ml-auto ltr:md:pl-8 rtl:md:mr-auto rtl:md:pr-8 lg:min-h-[calc(100vh-96px)] lg:w-[460px] ltr:lg:pl-12 rtl:lg:pr-12 xl:w-[592px] ltr:xl:pl-20 rtl:xl:pr-20">
           <div className="block">
             <div className="block">
               <div className="flex justify-between">
@@ -121,27 +120,13 @@ export default function NftDetails() {
                 <div className="shrink-0 border-dashed border-gray-200 dark:border-gray-700 lg:px-6 lg:ltr:border-r lg:rtl:border-l"></div>
                 <div className="lg:px-6">
                   <h3 className="mb-2.5  text-gray-900 dark:text-white">
-                    {singleListing?.asset.description}
+                    {singleListing?.asset.description || ''}
                   </h3>
                 </div>
               </div>
-              {/*<Button
-                shape="rounded"
-                variant="solid"
-                color="gray"
-                className="dark:bg-gray-800"
-                onClick={() =>
-                  openModal(
-                    'SHARE_VIEW',
-                    `/nft-details/${singleListing?.assetContractAddress}/${singleListing?.id}`
-                  )
-                }
-              >
-                Compartir
-              </Button>*/}
             </div>
             <div className="mt-5 flex flex-col pb-5 xl:mt-9">
-              <div className="grid grid-cols-3 gap-2 text-center align-center">
+              <div className="align-center grid grid-cols-3 gap-2 text-center">
                 <DescriptionGrid
                   title={'Precio Unitario'}
                   text={
@@ -161,7 +146,7 @@ export default function NftDetails() {
                 <DescriptionGrid
                   title={'Marketcap'}
                   text={
-                    `$  ${singleListing?.asset.attributes[3].value} 
+                    `$  ${singleListing?.asset.attributes[3].value || ''} 
                     ${singleListing?.currencyValuePerToken.symbol}` || ''
                   }
                 />
@@ -179,7 +164,7 @@ export default function NftDetails() {
                 />
               </div>
             </div>
-            <div className="flex w-full flex-row justify-center mb-5">
+            <div className="mb-5 flex w-full flex-row justify-center">
               <button
                 onClick={() => dispatch(onOpenCheckout(true))}
                 className="ml-auto flex w-full justify-center rounded border-0 bg-brand p-2 px-6 py-2 font-medium text-black hover:bg-green-400 focus:outline-none"

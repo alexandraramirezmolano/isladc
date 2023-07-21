@@ -62,7 +62,7 @@ const LiveDemo: NextPageWithLayout = () => {
     try {
       const sdk = new ThirdwebSDK(Mumbai);
       const contract = await sdk.getContract(
-        process.env.NEXT_PUBLIC_MARKETPLACE_ADDRESS || ''
+        '0xADe8C8680e0d795c2AAe510D5077d638228F6476' || ''
       );
 
       const listings = await contract.directListings.getAll();
@@ -103,7 +103,7 @@ const LiveDemo: NextPageWithLayout = () => {
     }
   };
 
-  const useAssets = async (
+  const UseAssets = async (
     balance: UseQueryResult<
       | {
           symbol: string;
@@ -200,7 +200,7 @@ const LiveDemo: NextPageWithLayout = () => {
   useEffect(() => {
     const fetchData = async () => {
       await GetNftsOwnedByWallet();
-      await useAssets(balance);
+      await UseAssets(balance);
     };
     fetchData();
   }, [walletAddress, balance]);

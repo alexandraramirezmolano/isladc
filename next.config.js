@@ -10,6 +10,7 @@ const nextConfig = withPWA({
   reactStrictMode: true,
   images: {
     domains: ['assets.coingecko.com'],
+    maximumFileSizeToCacheInBytes: 4.37 * 1024 * 1024,
   },
 
   webpack(config, options) {

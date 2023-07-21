@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "deploy": "npm run build && npx thirdweb@latest upload build"
+    "deploy": "npx serverless",
+    "export": "next build && next export -o build"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -48,6 +49,7 @@
     "next": "^13.2.4",
     "next-pwa": "^5.6.0",
     "next-seo": "^5.15.0",
+    "next-server": "^9.0.5",
     "next-sitemap": "^3.1.55",
     "next-themes": "^0.2.1",
     "overlayscrollbars": "^2.1.1",
@@ -94,6 +96,7 @@
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.6",
     "rimraf": "^3.0.2",
+    "serverless-nextjs-plugin": "^2.5.2-alpha.0",
     "tailwindcss": "^3.3.1",
     "typescript": "5.0.3",
     "webpack-pwa-manifest": "^4.3.0",

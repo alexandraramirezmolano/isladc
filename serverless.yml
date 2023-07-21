@@ -1,0 +1,16 @@
+org: nayru
+app: my-nextjs-app
+service: my-nextjs-app
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1 # Change to your desired AWS region
+
+plugins:
+  - serverless-nextjs-plugin
+
+custom:
+  serverless-nextjs:
+    # Set the nextConfigDir to the directory where your Next.js app is located
+    # In this case, it's the root directory, so we use '.'
+    nextConfigDir: .

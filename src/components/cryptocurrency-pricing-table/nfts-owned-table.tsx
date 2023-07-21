@@ -29,6 +29,7 @@ const COLUMNS = [
             'https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2F%24&psig=AOvVaw1ho4taO7lkx6wpNAGPSvKi&ust=1685488600974000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCMiqqLzUm_8CFQAAAAAdAAAAABAE'
           }
           style={{ width: '40px', height: '40px', objectFit: 'contain' }}
+          alt={value}
         ></img>
       </div>
     ),
@@ -75,7 +76,7 @@ const COLUMNS = [
     accessor: 'polygonscan',
     // @ts-ignore
     Cell: ({ cell: { value } }) => (
-      <div className="ltr:text-left rtl:text-left text-dark font-bold">
+      <div className="font-bold text-dark ltr:text-left rtl:text-left">
         <a href={value} target="_blank">
           Ver
         </a>
